@@ -1,0 +1,24 @@
+<app-add-contact (arrayEvent)="addtoList($event)" [editId]="selectedId"></app-add-contact>
+<br>
+<div class="container">
+    <h2>Contact Info</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Contact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contact of contacts; let i=index">
+          <td>{{contact.name}}</td>
+          <td>{{contact.contact}}</td>
+          <td>
+          <button class="btn btn-info" (click)="onEdit(i)">Edit</button>
+          <button class="btn btn-danger" (click)="onDelete(i)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
