@@ -34,13 +34,18 @@ export class AddContactComponent implements OnInit {
     });
   }
   onAdd(){
-    this.model={
-      name:this.addcontact.value["name"],
-      contact:this.addcontact.value["contact"],
+    if(!this.addcontact.value["name"] || !this.addcontact.value["contact"]){
+      alert("Please Fill the form fields first");
     }
-    this.contact.push(this.model);
-    console.log(this.contact);
-    this.arrayEvent.emit(this.contact);
+    else{
+      this.model={
+        name:this.addcontact.value["name"],
+        contact:this.addcontact.value["contact"],
+      }
+      this.contact.push(this.model);
+      console.log(this.contact);
+      this.arrayEvent.emit(this.contact);
+    }
   }
   onEdit(id):void{
     this.message="Contact Selected To Edit";
