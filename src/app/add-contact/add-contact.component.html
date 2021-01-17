@@ -9,6 +9,8 @@
       <label for="Contact">Contact:</label>
       <input type="number" class="form-control" id="contact" placeholder="Enter Contact..." formControlName="contact">
     </div>
-    <button type="submit" class="btn btn-primary" (click)="onAdd()">Submit</button>
+    <button #button type="submit" class="btn btn-primary" (click)="onAdd()">Add New Contact</button>
+    <button type="submit" class="btn btn-primary" (click)="onUpdate()" style="margin-left: 10px;">Update Contact</button>
+    <p>{{message}}</p>
   </form>
 </div>
